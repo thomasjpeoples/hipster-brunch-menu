@@ -26,3 +26,9 @@ streamlit.dataframe(fruits_to_show)
 # New section to display the fruityvice
 streamlit.header('Fruityvice = Fruit + Advice')
 streamlit.text(fruityvice_response.json())
+
+# take the json version of the response and normalise it
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+
+# output that nice output as a dataframe, built by PANDAS!
+streamlit.dataframe(fruityvice_normalized)
